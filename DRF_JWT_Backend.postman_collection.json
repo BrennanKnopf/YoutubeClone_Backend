@@ -118,17 +118,72 @@
 			"item": [
 				{
 					"name": "Get_All_Comments",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/comments/all/asdfasdf",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"comments",
+								"all",
+								"asdfasdf"
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "Post_Comment",
 					"request": {
-						"method": "GET",
-						"header": []
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ2NDkxNDkxLCJpYXQiOjE2NDU2Mjc0OTEsImp0aSI6Ijc2NGNiMDg4NmE1NTQ2ODViNzc2N2JmMmJlYmZiMTNjIiwidXNlcl9pZCI6Mn0.W5lNcRDanUO0TVifCAZfjS6Mzgw7i_Cg4A74bd18zuY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user\": \"1\",\r\n    \"video_id\": \"asdfasdf\",\r\n    \"text\": \"Wow, such cool, this video is awesome.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/comments/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"comments",
+								""
+							]
+						}
 					},
 					"response": []
 				},
@@ -136,15 +191,68 @@
 					"name": "Get_Comments_For_User",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ2NDkxNDkxLCJpYXQiOjE2NDU2Mjc0OTEsImp0aSI6Ijc2NGNiMDg4NmE1NTQ2ODViNzc2N2JmMmJlYmZiMTNjIiwidXNlcl9pZCI6Mn0.W5lNcRDanUO0TVifCAZfjS6Mzgw7i_Cg4A74bd18zuY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/comments/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"comments",
+								""
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "Put_Comment",
 					"request": {
-						"method": "GET",
-						"header": []
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ2NDkxNDkxLCJpYXQiOjE2NDU2Mjc0OTEsImp0aSI6Ijc2NGNiMDg4NmE1NTQ2ODViNzc2N2JmMmJlYmZiMTNjIiwidXNlcl9pZCI6Mn0.W5lNcRDanUO0TVifCAZfjS6Mzgw7i_Cg4A74bd18zuY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user\": \"1\",\r\n    \"video_id\": \"asdfasdf\",\r\n    \"text\": \"I wonder if this will work.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/comments/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"comments",
+								"1"
+							]
+						}
 					},
 					"response": []
 				},
@@ -152,15 +260,72 @@
 					"name": "Get_All_Replies",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ2NDk2NDE5LCJpYXQiOjE2NDU2MzI0MTksImp0aSI6ImQ0NmU4YzNhZDIxODQxMjRiZDJhYTlhMzUyN2Y3MGI5IiwidXNlcl9pZCI6Mn0.S7ipQQOb-JmOpYT6I87MJgD4OBc2kTAUgsnl2UvFfWI",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/comments/1/all/replies",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"comments",
+								"1",
+								"all",
+								"replies"
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "Post_Reply",
 					"request": {
-						"method": "GET",
-						"header": []
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ2NDk2NDE5LCJpYXQiOjE2NDU2MzI0MTksImp0aSI6ImQ0NmU4YzNhZDIxODQxMjRiZDJhYTlhMzUyN2Y3MGI5IiwidXNlcl9pZCI6Mn0.S7ipQQOb-JmOpYT6I87MJgD4OBc2kTAUgsnl2UvFfWI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user\": \"1\",\r\n    \"video_id\": \"asdfasdf\",\r\n    \"comment\": \"1\",\r\n    \"text\": \"Wow, such cool, i can actually reply.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/comments/1/replies",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"comments",
+								"1",
+								"replies"
+							]
+						}
 					},
 					"response": []
 				},
@@ -168,15 +333,70 @@
 					"name": "Get_Replies_For_User",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer  eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ2NDk2NDE5LCJpYXQiOjE2NDU2MzI0MTksImp0aSI6ImQ0NmU4YzNhZDIxODQxMjRiZDJhYTlhMzUyN2Y3MGI5IiwidXNlcl9pZCI6Mn0.S7ipQQOb-JmOpYT6I87MJgD4OBc2kTAUgsnl2UvFfWI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/comments/1/replies",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"comments",
+								"1",
+								"replies"
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "Put_Reply",
 					"request": {
-						"method": "GET",
-						"header": []
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ2NDk2NDE5LCJpYXQiOjE2NDU2MzI0MTksImp0aSI6ImQ0NmU4YzNhZDIxODQxMjRiZDJhYTlhMzUyN2Y3MGI5IiwidXNlcl9pZCI6Mn0.S7ipQQOb-JmOpYT6I87MJgD4OBc2kTAUgsnl2UvFfWI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user\": \"1\",\r\n    \"video_id\": \"asdfasdf\",\r\n    \"comment\": \"1\",\r\n    \"text\": \"Or can I\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/comments/1/replies",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"comments",
+								"1",
+								"replies"
+							]
+						}
 					},
 					"response": []
 				}
