@@ -2,7 +2,8 @@ from django.urls import path
 from comments import views
 
 
+
 urlpatterns = [
-    path('', views.CommentList.as_view())
-    path('post/', views.post_comment)
+    path('all/', views.get_all_comments),
+    path('', views.user_comments)
 ]
