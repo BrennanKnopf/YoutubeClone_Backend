@@ -12,13 +12,3 @@ services:
     - '/app/node_modules'
     ports:
       - '3002:3000'
-
-  frontend_test:
-    container_name: youtube-clone-backend_web
-    depends_on:
-      - "backend_web"
-    image: youtube-clone-backend_web
-    volumes:
-     - .:/app
-     - '/app/node_modules'
-    command: ["npm", "run", "test"]
