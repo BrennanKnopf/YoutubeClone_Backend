@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-$-*c5gei%cikbqw&1eqj$7_%c3npk^^7xp#_x(8oc$zy(j3wus
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['0.0.0.0']
 
 
 # Application definition
@@ -82,8 +82,15 @@ WSGI_APPLICATION = 'drf_jwt_backend.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'mysql.connector.django',
+        'NAME': 'db',
+        'USER': 'root',
+        'PASSWORD': 'example',
+        'HOST': 'db',
+        # 'PORT': '3306',
+        'OPTIONS': {
+            'autocommit': True
+        }
     }
 }
 
