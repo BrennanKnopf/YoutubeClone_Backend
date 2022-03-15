@@ -87,7 +87,7 @@ DATABASES = {
         'USER': 'root',
         'PASSWORD': 'example',
         'HOST': 'db',
-        # 'PORT': '3306',
+        'PORT': '8000',
         'OPTIONS': {
             'autocommit': True
         }
